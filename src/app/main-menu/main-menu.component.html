@@ -1,0 +1,20 @@
+<!-- MAIN TOP MENU -->
+<sm-menu class="fixed inverted black">
+  <a sm-item class="menu-item" (click)="invertedSidebar.show({transition: 'overlay'})">
+    <i sm-item class="sidebar icon"></i>
+    Properties
+  </a>
+  <sm-dropdown sm-item title="Resources" [options]="{on: 'hover'}">
+    <sm-item>Add Property</sm-item>
+  </sm-dropdown>
+</sm-menu>
+
+<!-- MAIN SIDEBAR -->
+<sm-sidebar class="left vertical inverted sidebar labeled icon menu" #invertedSidebar>        
+    <a class="item" routerLink="/properties">
+        <i class="home icon"></i> Properties
+    </a>
+    <a class="item" routerLink="/dashboard">
+        <i class="block layout icon"></i> Dashboard
+    </a>
+</sm-sidebar>
