@@ -140,5 +140,10 @@
       }
     }
   },
-  "defaultProject": "real-estate-app"
+  "defaultProject": "real-estate-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

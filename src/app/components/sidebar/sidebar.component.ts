@@ -4,14 +4,14 @@ import { Subscription } from 'rxjs';
 import { AnimateService } from 'src/app/animate.service';
 
 @Component({
-  selector: 'app-main-menu',
-  templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.sass'],
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.sass'],
   animations: [
-    Animations.openCloseButton
+    Animations.openClose
   ]
 })
-export class MainMenuComponent implements OnInit {
+export class SidebarComponent implements OnInit {
 
   private sbAnimateSub: Subscription;
   isOpen: boolean;
@@ -25,7 +25,4 @@ export class MainMenuComponent implements OnInit {
       });
   }
 
-  sbToggle() {
-    this.animateService.sbAnimateUpdate();
-  }
 }

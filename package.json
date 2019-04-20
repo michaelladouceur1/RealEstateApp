@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:server": "nodemon server.js"
   },
   "private": true,
   "dependencies": {
@@ -25,8 +26,11 @@
     "mongoose": "^5.5.1",
     "ng-semantic": "^1.1.13",
     "node": "^11.13.0",
+    "nodemon": "^1.18.11",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.4.0",
+    "sass-convert": "^0.5.2",
+    "sass-google-fonts": "^1.0.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
