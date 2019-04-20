@@ -6,7 +6,7 @@ import { AnimateService } from 'src/app/animate.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.sass'],
+  styleUrls: ['./sidebar.component.scss'],
   animations: [
     Animations.openClose
   ]

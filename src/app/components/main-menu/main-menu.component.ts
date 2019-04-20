@@ -6,7 +6,7 @@ import { AnimateService } from 'src/app/animate.service';
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.sass'],
+  styleUrls: ['./main-menu.component.scss'],
   animations: [
     Animations.openCloseButton
   ]

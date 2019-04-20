@@ -1,0 +1,27 @@
+/* IMPORTS */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+
+/* APPLICATION CONSTANTS */
+
+$main-font: 'Open Sans Condensed', sans-serif;
+
+* {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #eeeeee;
+}
+
+.pusher {
+  min-height: 100%;
+}
+
+.content {
+  text-align: center;
+  min-height: 100%;
+  background: #dddddd;
+}
