@@ -1,22 +1,35 @@
 /* IMPORTS */
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Montserrat:400,700|Roboto+Condensed:400,700);
 
 /* APPLICATION CONSTANTS */
 
-$main-font: 'Open Sans Condensed', sans-serif;
+$main-font-1: 'Open Sans Condensed', sans-serif;
+$main-font-2: 'Roboto Condensed', sans-serif;
+$main-font-3: 'Montserrat', sans-serif;
+$menu-transition: 0.15s;
+$card-transition: 0.15s;
+$line-transition: 0.75s;
+$box-shadow-init: 0px 4px 4px rgba(0,0,0,0.2);
+$box-shadow-hover: 0px 10px 10px rgba(0,0,0,0.2);
+$background-color: #ddd;
+$card-color: white;
+$menu-bg-color: white;
+$primary-font-color: black;
+$accent-color-1: #d8e7ff;
+$line-color: $background-color;
+$line-hover-color: #3f6efc;
+$header-font-size: 16px;
+$subitem-font-size: 14px;
+$menu-font-size: 15px;
 
 * {
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: $main-font-3;
+  color: $primary-font-color;
 }
 
 html, body {
   margin: 0;
   height: auto;
   width: 100%;
-  background: #eeeeee;
-}
-
-.card {
-  border: 1px solid
 }

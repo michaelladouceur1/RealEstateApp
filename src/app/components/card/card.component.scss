@@ -2,9 +2,33 @@
 
 // CARD CONSTANTS
 
-$primary-card-color: white;
-
 .card {
-  background: $primary-card-color;
-  box-shadow:
+  background: $card-color;
+  height: 100px;
+  transition: $card-transition;
+  box-shadow: $box-shadow-init;
+  &:hover {
+    box-shadow: $box-shadow-hover;
+    .card-header::after{
+      background: $line-hover-color;
+    }
+  }
 }
+
+.card-header {
+  font-size: $header-font-size;
+  text-align: left;
+  padding: 10px;
+  &::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 5px auto;
+    background: $line-color;
+    transition: $line-transition;
+  }
+}
+
+
+

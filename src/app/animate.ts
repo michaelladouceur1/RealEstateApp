@@ -36,12 +36,10 @@ export const Animations = {
   ]),
   openCloseButton: trigger('openCloseButton', [
     state('open', style({
-      width: shift,
-      fontSize: '20px'
+      width: '218px'
     })),
     state('closed', style({
-      width: '50px',
-      fontSize: '15px'
+      width: '50px'
     })),
     transition('open <=> closed', [
       animate(transitionTime)

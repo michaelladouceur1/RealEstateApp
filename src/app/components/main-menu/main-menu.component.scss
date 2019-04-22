@@ -6,44 +6,35 @@ $main-menu-height: 50px;
 .main-menu {
   width: 100%;
 	height: $main-menu-height;
-	background-color: #444;
+  background-color: $menu-bg-color;
   margin: 0;
-}
-
-.main-menu ul {
-  list-style-type: none;
-  height: auto;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.main-menu li {
-  position: relative;
-  height: $main-menu-height;
-  min-height: $main-menu-height;
-  float: none;
-  display: inline-block;
-  text-align: center;
-  padding: ($main-menu-height)-35 16px;
-  margin: auto 0;
-  font-size: 15px;
-  text-decoration: none;
-  outline: none;
-	color: white;
-  transition: 0.2s;
-}
-
-.main-menu li:hover {
-  background-color: #555;
-  cursor: pointer;
-}
-
-.main-menu a {
-
-}
-
-.main-menu span {
-	margin-right: 5px;
+  ul {
+    list-style-type: none;
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li {
+    position: relative;
+    height: 100%;
+    float: none;
+    display: inline-block;
+    text-align: center;
+    padding: $menu-font-size 16px;
+    margin: 0;
+    font-size: $menu-font-size;
+    text-decoration: none;
+    outline: none;
+    transition: $menu-transition;
+    &:hover {
+      background-color: $accent-color-1;
+      cursor: pointer;
+    }
+  }
+  span {
+    margin: 0;
+    margin-right: 5px;
+  }
 }

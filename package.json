@@ -24,7 +24,6 @@
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "mongoose": "^5.5.1",
-    "ng-semantic": "^1.1.13",
     "node": "^11.13.0",
     "nodemon": "^1.18.11",
     "rxjs": "~6.3.3",
