@@ -1,0 +1,17 @@
+@import '../../app.component.scss';
+
+.pusher {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #ccc;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  margin: 50px auto;
+  height: 100%;
+  width: 100%;
+}

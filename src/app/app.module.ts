@@ -9,6 +9,8 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { DashboardComponent } from './templates/dashboard/dashboard.component';
 import { PropertiesComponent } from './templates/properties/properties.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PusherComponent } from './templates/pusher/pusher.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MainMenuComponent,
     DashboardComponent,
     PropertiesComponent,
-    SidebarComponent
+    SidebarComponent,
+    PusherComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

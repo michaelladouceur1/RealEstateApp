@@ -12,16 +12,11 @@ $main-font: 'Open Sans Condensed', sans-serif;
 
 html, body {
   margin: 0;
-  height: 100%;
+  height: auto;
+  width: 100%;
   background: #eeeeee;
 }
 
-.pusher {
-  min-height: 100%;
-}
-
-.content {
-  text-align: center;
-  min-height: 100%;
-  background: #dddddd;
+.card {
+  border: 1px solid
 }

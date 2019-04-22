@@ -2,17 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Animations } from '../../animate';
 import { Subscription } from 'rxjs';
 import { AnimateService } from 'src/app/animate.service';
-import { AppRoutingModule } from '../../app-routing.module';
 
 @Component({
-  selector: 'app-main-menu',
-  templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.scss'],
+  selector: 'app-pusher',
+  templateUrl: './pusher.component.html',
+  styleUrls: ['./pusher.component.scss'],
   animations: [
-    Animations.openCloseButton
+    Animations.openCloseContent
   ]
 })
-export class MainMenuComponent implements OnInit {
+export class PusherComponent implements OnInit {
 
   private sbAnimateSub: Subscription;
   isOpen: boolean;
@@ -26,7 +25,4 @@ export class MainMenuComponent implements OnInit {
       });
   }
 
-  sbToggle() {
-    this.animateService.sbAnimateUpdate();
-  }
 }

@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 
 var shift = '250px';
+var transitionTime = '0.15s';
 
 export const Animations = {
   openClose:  trigger('openClose', [
@@ -22,7 +23,7 @@ export const Animations = {
       color: '#444'
     })),
     transition('open <=> closed', [
-      animate('0.15s')
+      animate(transitionTime)
     ])
   ]),
   openCloseContent: trigger('openCloseContent', [
@@ -30,18 +31,20 @@ export const Animations = {
       marginLeft: shift
     })),
     transition('open <=> closed', [
-      animate('0.15s')
+      animate(transitionTime)
     ])
   ]),
   openCloseButton: trigger('openCloseButton', [
     state('open', style({
-      width: shift
+      width: shift,
+      fontSize: '20px'
     })),
     state('closed', style({
-      width: '150px'
+      width: '50px',
+      fontSize: '15px'
     })),
     transition('open <=> closed', [
-      animate('0.15s')
+      animate(transitionTime)
     ])
   ])
 }
