@@ -36,7 +36,8 @@ export const Animations = {
   ]),
   openCloseButton: trigger('openCloseButton', [
     state('open', style({
-      width: '218px'
+      width: '218px',
+      background: '#fffdbd'
     })),
     state('closed', style({
       width: '50px'

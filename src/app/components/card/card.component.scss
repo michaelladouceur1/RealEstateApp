@@ -4,9 +4,10 @@
 
 .card {
   background: $card-color;
-  height: 100px;
   transition: $card-transition;
   box-shadow: $box-shadow-init;
+  margin: 20px;
+  padding: 10px;
   &:hover {
     box-shadow: $box-shadow-hover;
     .card-header::after{
@@ -30,5 +31,7 @@
   }
 }
 
-
+.card-content {
+  flex-wrap: wrap;
+}
 
