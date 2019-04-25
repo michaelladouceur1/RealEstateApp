@@ -28,6 +28,7 @@ export const Animations = {
   ]),
   openCloseContent: trigger('openCloseContent', [
     state('open', style({
+      width: `calc(100% - ${shift})`,
       marginLeft: shift
     })),
     transition('open <=> closed', [
@@ -36,7 +37,7 @@ export const Animations = {
   ]),
   openCloseButton: trigger('openCloseButton', [
     state('open', style({
-      width: '218px',
+      width: shift,
       background: '#fffdbd'
     })),
     state('closed', style({

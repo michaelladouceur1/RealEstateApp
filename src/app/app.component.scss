@@ -28,6 +28,7 @@ $menu-font-size: 15px;
 * {
   font-family: $main-font-3;
   color: $primary-font-color;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -35,3 +36,4 @@ html, body {
   height: auto;
   width: 100%;
 }
+

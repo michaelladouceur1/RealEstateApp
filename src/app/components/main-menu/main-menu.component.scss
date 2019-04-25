@@ -4,37 +4,37 @@
 $main-menu-height: 50px;
 
 .main-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 	height: $main-menu-height;
   background-color: $menu-bg-color;
-  margin: 0;
+  margin: 0 auto;
   ul {
     list-style-type: none;
     height: auto;
     min-height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
   }
-  li {
-    position: relative;
-    height: 100%;
-    float: none;
+  div {
+    display: inline-block;
+  }
+  a {
+    height: $main-menu-height;
     display: inline-block;
     text-align: center;
-    padding: $menu-font-size 16px;
-    margin: 0;
+    padding: $menu-font-size;
+    margin: 0 auto;
     font-size: $menu-font-size;
-    text-decoration: none;
     outline: none;
+    text-decoration: none;
     transition: $menu-transition;
     &:hover {
       background-color: $accent-color-1;
       cursor: pointer;
     }
   }
-  span {
-    margin: 0;
-    margin-right: 5px;
-  }
 }
+

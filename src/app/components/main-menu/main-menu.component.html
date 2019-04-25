@@ -1,6 +1,8 @@
 <div class="main-menu">
-  <ul>
-    <li [@openCloseButton]="isOpen ? 'open' : 'closed'" (click)="sbToggle()"><span>&#9776;</span>{{ isOpen ? 'Properties' : ''}}</li>
-    <li routerLink="dashboard"><span>&#9750;</span>Home</li>
-  </ul>
+    <div id="properties">
+        <a [@openCloseButton]="isOpen ? 'open' : 'closed'" (click)="sbToggle()"><span>&#9776;</span>{{ isOpen ? 'Properties' : ''}}</a>
+    </div>
+    <div id="navmenu">
+        <a routerLink="dashboard">Dashboard</a>
+    </div>
 </div>

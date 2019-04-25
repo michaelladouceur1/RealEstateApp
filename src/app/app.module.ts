@@ -10,6 +10,7 @@ import { PropertiesComponent } from './templates/properties/properties.component
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PusherComponent } from './templates/pusher/pusher.component';
 import { CardComponent } from './components/card/card.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
     PropertiesComponent,
     SidebarComponent,
     PusherComponent,
-    CardComponent
+    CardComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
