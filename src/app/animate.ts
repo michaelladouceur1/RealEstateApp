@@ -13,7 +13,11 @@ var transitionTime = '0.2s ease-out';
 export const Animations = {
   openClose:  trigger('openClose', [
     // ...
-    state('open', style({
+    state('openBoth', style({
+      opacity: 1,
+      width: shift
+    })),
+    state('openLeft', style({
       opacity: 1,
       width: shift
     })),
@@ -22,11 +26,15 @@ export const Animations = {
       width: 0,
       color: '#444'
     })),
-    transition('open <=> closed', [
+    transition('* <=> *', [
       animate(transitionTime)
     ])
   ]),
   openCloseContent: trigger('openCloseContent', [
+    state('openBoth', style({
+      width: `calc(100% - 500px)`,
+      marginLeft: shift
+    })),
     state('openLeft', style({
       width: `calc(100% - ${shift})`,
       marginLeft: shift
@@ -35,41 +43,42 @@ export const Animations = {
       width: `calc(100% - ${shift})`,
       marginRight: shift
     })),
-    state('openRight && openLeft', style({
-      width: `calc(100% - 500px)`
+    state('closed', style({
+      width: '100%',
     })),
-    state('close', style({
-      width: `calc(100% + ${shift})`,
-      marginLeft: -shift
-    })),
-    transition('openLeft <=> closed', [
-      animate(transitionTime)
-    ]),
-    transition('openRight <=> closed', [
+    transition('* <=> *', [
       animate(transitionTime)
     ])
   ]),
   openCloseButtonSB: trigger('openCloseButtonSB', [
+    state('openBoth', style({
+      width: shift,
+      background: '#fffdbd'
+    })),
     state('openLeft', style({
       width: shift,
       background: '#fffdbd'
     })),
-    state('closeLeft', style({
+    state('closed', style({
       width: '50px'
     })),
-    transition('openLeft <=> closed', [
+    transition('* <=> *', [
       animate(transitionTime)
     ])
   ]),
   openCloseButtonSN: trigger('openCloseButtonSN', [
+    state('openBoth', style({
+      width: shift,
+      background: '#fffdbd'
+    })),
     state('openRight', style({
       width: shift,
       background: '#fffdbd'
     })),
-    state('closeRight', style({
+    state('closed', style({
       width: '50px'
     })),
-    transition('openRight <=> closed', [
+    transition('* <=> *', [
       animate(transitionTime)
     ])
   ])

@@ -5,8 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimateService {
-  private sbAnimate = new Subject<boolean>();
-  private snAnimate = new Subject<boolean>();
+  private sbAnimate = new Subject<string>();
   private openLeft: boolean = false;
   private openRight: boolean = false;
 
@@ -16,19 +15,25 @@ export class AnimateService {
     return this.sbAnimate.asObservable();
   }
 
-  snAnimateListener() {
-    return this.snAnimate.asObservable();
-  }
+  sbAnimateUpdate(res: string) {
+    if(res === 'openLeft') {
+      this.openLeft = !this.openLeft;
+    }
+    else {
+      this.openRight = !this.openRight;
+    }
 
-  sbAnimateUpdate() {
-    console.log('Left Toggled');
-    this.openLeft = !this.openLeft
-    this.sbAnimate.next(this.openLeft);
-  }
-
-  snAnimateUpdate() {
-    console.log('Right Toggled');
-    this.openRight = !this.openRight
-    this.snAnimate.next(this.openRight);
+    if(this.openLeft === true && this.openRight === true) {
+      this.sbAnimate.next('openBoth');
+    }
+    else if(this.openLeft === true && this.openRight === false) {
+      this.sbAnimate.next('openLeft');
+    }
+    else if(this.openLeft === false && this.openRight === true) {
+      this.sbAnimate.next('openRight');
+    }
+    else {
+      this.sbAnimate.next('closed');
+    }
   }
 }

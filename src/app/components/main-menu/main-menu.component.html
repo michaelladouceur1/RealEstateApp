@@ -1,9 +1,9 @@
 <div class="main-menu">
     <div id="properties">
-        <a [@openCloseButtonSB]="openLeft ? 'openLeft' : 'closeLeft'" (click)="sbToggle()"><span>&#9776;</span></a>
+        <a [@openCloseButtonSB]="sbReturn()" (click)="sbToggle('openLeft')"><span>&#9776;</span></a>
     </div>
     <div id="navmenu">
-        <a [@openCloseButtonSN]="openRight ? 'openRight' : 'closeRight'" (click)="snToggle()"><span>&#9776;</span></a>
+        <a [@openCloseButtonSN]="sbReturn()" (click)="sbToggle('openRight')"><span>&#9776;</span></a>
     </div>
 </div>
 

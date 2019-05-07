@@ -14,15 +14,19 @@ import { AnimateService } from 'src/app/animate.service';
 export class SidebarComponent implements OnInit {
 
   private sbAnimateSub: Subscription;
-  openLeft: boolean;
+  res: string;
 
   constructor(public animateService: AnimateService) { }
 
   ngOnInit() {
     this.sbAnimateSub = this.animateService.sbAnimateListener()
-      .subscribe((openLeft: boolean) => {
-        this.openLeft = openLeft;
+      .subscribe((res: string) => {
+        this.res = res;
       });
+  }
+
+  sidebarReturn() {
+    return this.res;
   }
 
 }

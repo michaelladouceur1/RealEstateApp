@@ -16,29 +16,24 @@ import { AppRoutingModule } from '../../app-routing.module';
 export class MainMenuComponent implements OnInit {
 
   private sbAnimateSub: Subscription;
-  private snAnimateSub: Subscription;
-  openLeft: boolean;
+  res: string;
   openRight: boolean;
 
   constructor(public animateService: AnimateService) { }
 
   ngOnInit() {
     this.sbAnimateSub = this.animateService.sbAnimateListener()
-      .subscribe((openLeft: boolean) => {
-        this.openLeft = openLeft;
-      });
-
-    this.snAnimateSub = this.animateService.snAnimateListener()
-      .subscribe((openRight: boolean) => {
-        this.openRight = openRight;
+      .subscribe((res: string) => {
+        this.res = res;
       });
   }
 
-  sbToggle() {
-    this.animateService.sbAnimateUpdate();
+  sbToggle(res: string) {
+    this.animateService.sbAnimateUpdate(res);
   }
 
-  snToggle() {
-    this.animateService.snAnimateUpdate();
+  sbReturn() {
+    console.log(this.res);
+    return this.res;
   }
 }
