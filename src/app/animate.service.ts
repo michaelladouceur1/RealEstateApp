@@ -6,7 +6,9 @@ import { Subject } from 'rxjs';
 })
 export class AnimateService {
   private sbAnimate = new Subject<boolean>();
-  private isOpen: boolean = false;
+  private snAnimate = new Subject<boolean>();
+  private openLeft: boolean = false;
+  private openRight: boolean = false;
 
   constructor() { }
 
@@ -14,9 +16,19 @@ export class AnimateService {
     return this.sbAnimate.asObservable();
   }
 
+  snAnimateListener() {
+    return this.snAnimate.asObservable();
+  }
+
   sbAnimateUpdate() {
-    console.log('Toggled');
-    this.isOpen = !this.isOpen
-    this.sbAnimate.next(this.isOpen);
+    console.log('Left Toggled');
+    this.openLeft = !this.openLeft
+    this.sbAnimate.next(this.openLeft);
+  }
+
+  snAnimateUpdate() {
+    console.log('Right Toggled');
+    this.openRight = !this.openRight
+    this.snAnimate.next(this.openRight);
   }
 }

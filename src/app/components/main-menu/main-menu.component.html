@@ -1,8 +1,11 @@
 <div class="main-menu">
     <div id="properties">
-        <a [@openCloseButton]="isOpen ? 'open' : 'closed'" (click)="sbToggle()"><span>&#9776;</span>{{ isOpen ? 'Properties' : ''}}</a>
+        <a [@openCloseButtonSB]="openLeft ? 'openLeft' : 'closeLeft'" (click)="sbToggle()"><span>&#9776;</span></a>
     </div>
     <div id="navmenu">
-        <a routerLink="dashboard">Dashboard</a>
+        <a [@openCloseButtonSN]="openRight ? 'openRight' : 'closeRight'" (click)="snToggle()"><span>&#9776;</span></a>
     </div>
 </div>
+
+<!-- {{ openLeft ? 'Properties' : '' }} -->
+<!-- {{ openRight ? 'Main Menu' : '' }} -->

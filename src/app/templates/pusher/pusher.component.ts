@@ -14,15 +14,22 @@ import { AnimateService } from 'src/app/animate.service';
 export class PusherComponent implements OnInit {
 
   private sbAnimateSub: Subscription;
-  isOpen: boolean;
+  private snAnimateSub: Subscription;
+  openLeft: boolean;
+  openRight: boolean;
 
   constructor(public animateService: AnimateService) { }
 
   ngOnInit() {
     this.sbAnimateSub = this.animateService.sbAnimateListener()
-      .subscribe((isOpen: boolean) => {
-        this.isOpen = isOpen;
+      .subscribe((openLeft: boolean) => {
+        this.openLeft = openLeft;
       });
+
+    this.snAnimateSub = this.animateService.snAnimateListener()
+    .subscribe((openRight: boolean) => {
+      this.openRight = openRight;
+    });
   }
 
 }

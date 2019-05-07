@@ -4,11 +4,11 @@ import {
   style,
   animate,
   transition,
-  keyframes
+  animation
 } from '@angular/animations';
 
 var shift = '250px';
-var transitionTime = '0.15s';
+var transitionTime = '0.2s ease-out';
 
 export const Animations = {
   openClose:  trigger('openClose', [
@@ -27,23 +27,49 @@ export const Animations = {
     ])
   ]),
   openCloseContent: trigger('openCloseContent', [
-    state('open', style({
+    state('openLeft', style({
       width: `calc(100% - ${shift})`,
       marginLeft: shift
     })),
-    transition('open <=> closed', [
+    state('openRight', style({
+      width: `calc(100% - ${shift})`,
+      marginRight: shift
+    })),
+    state('openRight && openLeft', style({
+      width: `calc(100% - 500px)`
+    })),
+    state('close', style({
+      width: `calc(100% + ${shift})`,
+      marginLeft: -shift
+    })),
+    transition('openLeft <=> closed', [
+      animate(transitionTime)
+    ]),
+    transition('openRight <=> closed', [
       animate(transitionTime)
     ])
   ]),
-  openCloseButton: trigger('openCloseButton', [
-    state('open', style({
+  openCloseButtonSB: trigger('openCloseButtonSB', [
+    state('openLeft', style({
       width: shift,
       background: '#fffdbd'
     })),
-    state('closed', style({
+    state('closeLeft', style({
       width: '50px'
     })),
-    transition('open <=> closed', [
+    transition('openLeft <=> closed', [
+      animate(transitionTime)
+    ])
+  ]),
+  openCloseButtonSN: trigger('openCloseButtonSN', [
+    state('openRight', style({
+      width: shift,
+      background: '#fffdbd'
+    })),
+    state('closeRight', style({
+      width: '50px'
+    })),
+    transition('openRight <=> closed', [
       animate(transitionTime)
     ])
   ])

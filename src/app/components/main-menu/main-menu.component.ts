@@ -9,24 +9,36 @@ import { AppRoutingModule } from '../../app-routing.module';
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.scss'],
   animations: [
-    Animations.openCloseButton
+    Animations.openCloseButtonSB,
+    Animations.openCloseButtonSN
   ]
 })
 export class MainMenuComponent implements OnInit {
 
   private sbAnimateSub: Subscription;
-  isOpen: boolean;
+  private snAnimateSub: Subscription;
+  openLeft: boolean;
+  openRight: boolean;
 
   constructor(public animateService: AnimateService) { }
 
   ngOnInit() {
     this.sbAnimateSub = this.animateService.sbAnimateListener()
-      .subscribe((isOpen: boolean) => {
-        this.isOpen = isOpen;
+      .subscribe((openLeft: boolean) => {
+        this.openLeft = openLeft;
+      });
+
+    this.snAnimateSub = this.animateService.snAnimateListener()
+      .subscribe((openRight: boolean) => {
+        this.openRight = openRight;
       });
   }
 
   sbToggle() {
     this.animateService.sbAnimateUpdate();
+  }
+
+  snToggle() {
+    this.animateService.snAnimateUpdate();
   }
 }
