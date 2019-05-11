@@ -12,7 +12,7 @@ $card-transition: 0.15s;
 $line-transition: 0.75s;
 $box-shadow-init: 0px 4px 4px rgba(0,0,0,0.2);
 $box-shadow-hover: 0px 10px 10px rgba(0,0,0,0.2);
-$background-color: #ddd;
+$background-color: #eee;
 $card-color: white;
 $menu-bg-color: white;
 $primary-font-color: black;
@@ -37,3 +37,6 @@ html, body {
   width: 100%;
 }
 
+i {
+  font-family: 'Material Icons' !important;
+}

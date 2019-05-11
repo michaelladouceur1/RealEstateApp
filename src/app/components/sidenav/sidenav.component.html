@@ -1,5 +1,9 @@
-<div class="sidenav">
-  <ul>
-    <li><a href="#"><img src="https://img.icons8.com/material/24/000000/home.png"></a></li>
+<div [@openCloseSN]="sidenavReturn()" class="sidenav">
+  <ul class="menu">
+    <a routerLink="dashboard"><li class="item"><i class="material-icons">dashboard</i></li></a>
+    <a routerLink="properties"><li class="item"><i class="material-icons">home</i></li></a>
+    <a href="#"><li class="item"><i class="material-icons">gavel</i></li></a>
+    <a href="#"><li class="item"><i class="material-icons">description</i></li></a>
+    <a href="#"><li class="item"><i class="material-icons">fingerprint</i></li></a>
   </ul>
 </div>

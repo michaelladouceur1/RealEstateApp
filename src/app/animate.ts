@@ -8,10 +8,13 @@ import {
 } from '@angular/animations';
 
 var shift = '250px';
+var halfShift = '75px';
 var transitionTime = '0.2s ease-out';
+var background = '#a2b9ff';
+// #fffdbd
 
 export const Animations = {
-  openClose:  trigger('openClose', [
+  openCloseSB:  trigger('openCloseSB', [
     // ...
     state('openBoth', style({
       opacity: 1,
@@ -30,9 +33,28 @@ export const Animations = {
       animate(transitionTime)
     ])
   ]),
+  openCloseSN:  trigger('openCloseSN', [
+    // ...
+    state('openBoth', style({
+      opacity: 1,
+      width: halfShift
+    })),
+    state('openRight', style({
+      opacity: 1,
+      width: halfShift
+    })),
+    state('closed', style({
+      opacity: 0,
+      width: 0,
+      color: '#444'
+    })),
+    transition('* <=> *', [
+      animate(transitionTime)
+    ])
+  ]),
   openCloseContent: trigger('openCloseContent', [
     state('openBoth', style({
-      width: `calc(100% - 500px)`,
+      width: `calc(100% - 325px)`,
       marginLeft: shift
     })),
     state('openLeft', style({
@@ -40,8 +62,8 @@ export const Animations = {
       marginLeft: shift
     })),
     state('openRight', style({
-      width: `calc(100% - ${shift})`,
-      marginRight: shift
+      width: `calc(100% - ${halfShift})`,
+      marginRight: halfShift
     })),
     state('closed', style({
       width: '100%',
@@ -53,11 +75,11 @@ export const Animations = {
   openCloseButtonSB: trigger('openCloseButtonSB', [
     state('openBoth', style({
       width: shift,
-      background: '#fffdbd'
+      background: background
     })),
     state('openLeft', style({
       width: shift,
-      background: '#fffdbd'
+      background: background
     })),
     state('closed', style({
       width: '50px'
@@ -68,12 +90,12 @@ export const Animations = {
   ]),
   openCloseButtonSN: trigger('openCloseButtonSN', [
     state('openBoth', style({
-      width: shift,
-      background: '#fffdbd'
+      width: halfShift,
+      background: background
     })),
     state('openRight', style({
-      width: shift,
-      background: '#fffdbd'
+      width: halfShift,
+      background: background
     })),
     state('closed', style({
       width: '50px'

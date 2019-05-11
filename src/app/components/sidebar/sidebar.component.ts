@@ -8,7 +8,7 @@ import { AnimateService } from 'src/app/animate.service';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
   animations: [
-    Animations.openClose
+    Animations.openCloseSB
   ]
 })
 export class SidebarComponent implements OnInit {
