@@ -1,26 +1,61 @@
-.container {
-  width: 80%;
-  max-width: 1200px;
-  height: 100px;
-  margin: 0 auto;
-  text-align: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  transition: 0.1s;
-}
+@import '../../app.component.scss';
+@import '../pusher/pusher.component.scss';
 
-.container:hover {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.secondary-menu {
-  width: 100%;
-  background-color: #333333;
-}
-
-.secondary-menu-item {
-  display: inline;
-  padding: 15px 20px;
-  margin: 0 auto;
-  padding: 0 15%;
+.content {
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template-columns: 7fr 3fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas:
+    'general prof'
+    'general .';
+  .prop-general-info {
+    grid-area: general;
+    .new-prop-nav {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-around;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 10px;
+      padding: 10px;
+      li {
+        display: inline-block;
+        padding: 0 auto;
+        &::after {
+          content: '';
+          display: block;
+          height: 2px;
+          width: 100%;
+          margin: 5px auto;
+          background: $line-color;
+          transition: $menu-transition;
+        }
+        &:hover {
+          cursor: pointer;
+          &::after {
+            background: $line-hover-color;
+          }
+        }
+      }
+    }
+    .general {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 1em;
+      grid-template-areas:
+        'address info'
+        'address info';
+      .prop-address {
+        grid-area: address;
+      }
+      .prop-info {
+        grid-area: info;
+      }
+    }
+  }
+  .prop-profile {
+    grid-area: prof;
+  }
 }

@@ -2,4 +2,7 @@
 @import '../pusher/pusher.component.scss';
 
 .content {
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template-columns: 7fr 3fr;
 }

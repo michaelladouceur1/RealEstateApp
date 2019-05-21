@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertiesComponent implements OnInit {
 
+  content = 'general';
+
   constructor() { }
 
   ngOnInit() {

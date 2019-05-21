@@ -12,6 +12,7 @@ $card-transition: 0.15s;
 $line-transition: 0.75s;
 $box-shadow-init: 0px 4px 4px rgba(0,0,0,0.2);
 $box-shadow-hover: 0px 10px 10px rgba(0,0,0,0.2);
+$grid-gap: 1em;
 $background-color: #eee;
 $card-color: white;
 $menu-bg-color: white;
@@ -21,7 +22,7 @@ $accent-color-2: #fffdbd;
 $accent-color-3: #a2b9ff;
 $line-color: $background-color;
 $line-hover-color: $accent-color-3;
-$header-font-size: 16px;
+$header-font-size: 20px;
 $subitem-font-size: 14px;
 $menu-font-size: 15px;
 
@@ -39,4 +40,42 @@ html, body {
 
 i {
   font-family: 'Material Icons' !important;
+}
+
+.form-block {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid $background-color;
+  li, label, input, select {
+    width: 100%;
+  }
+  li {
+    margin: 10px auto;
+    text-align: left;
+  }
+  input, select {
+    border: 1px solid $background-color;
+    border-radius: 2px;
+    outline: none;
+    &:focus {
+      border: 1px solid $line-hover-color;
+    }
+  }
+  .form-header {
+    font-size: 0.9*$header-font-size;
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+      margin: 5px auto;
+      background: $line-color;
+      transition: $menu-transition;
+    }
+  }
+  .form-item {
+    font-size: 0.7*$header-font-size;
+  }
 }

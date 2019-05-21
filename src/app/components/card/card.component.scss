@@ -6,7 +6,7 @@
   background: $card-color;
   transition: $card-transition;
   box-shadow: $box-shadow-init;
-  margin: 20px;
+  height: 100%;
   padding: 10px;
   &:hover {
     box-shadow: $box-shadow-hover;
@@ -30,8 +30,3 @@
     transition: $line-transition;
   }
 }
-
-.card-content {
-
-}
-

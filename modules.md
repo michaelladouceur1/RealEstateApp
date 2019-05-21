@@ -31,4 +31,28 @@
   * Map
   * Rehab History
 
+  * General
+    * Address
+    * Home Type
+    * Bedrooms
+    * Bathrooms
+    * Windows
+    * Parking
+    * Heating Type
+    * Cooling Type
+    * Appliances
+    * Square Footage
+    * School District and Schools
+    * Detailed Description
+
+  * Financial
+    * Purchase Price
+    * Current Estimated Value
+    * After Rehab Value
+    * Downpayment (Percent or Dollars)
+    * Loan Amount
+    * Closing Costs (Percent or Dollars)
+    * Miscellaneous Costs/Fees
+
+
 * **Rehab Analyzer:** Estimate and analyze rehab costs and times
