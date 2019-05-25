@@ -5,10 +5,10 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimateService {
-  private modalAnimate = new Subject<boolean>();
+  private modalAnimate = new Subject<string>();
   private sbAnimate = new Subject<string>();
-  private openLeft: boolean = false;
-  private openRight: boolean = false;
+  private openLeft = false;
+  private openRight = false;
 
   constructor() { }
 
@@ -20,28 +20,24 @@ export class AnimateService {
     return this.sbAnimate.asObservable();
   }
 
-  modalAnimateUpdate(res: boolean) {
+  modalAnimateUpdate(res: string) {
     this.modalAnimate.next(res);
   }
 
   sbAnimateUpdate(res: string) {
-    if(res === 'openLeft') {
+    if (res === 'openLeft') {
       this.openLeft = !this.openLeft;
-    }
-    else {
+    } else {
       this.openRight = !this.openRight;
     }
 
-    if(this.openLeft === true && this.openRight === true) {
+    if (this.openLeft === true && this.openRight === true) {
       this.sbAnimate.next('openBoth');
-    }
-    else if(this.openLeft === true && this.openRight === false) {
+    } else if (this.openLeft === true && this.openRight === false) {
       this.sbAnimate.next('openLeft');
-    }
-    else if(this.openLeft === false && this.openRight === true) {
+    } else if (this.openLeft === false && this.openRight === true) {
       this.sbAnimate.next('openRight');
-    }
-    else {
+    } else {
       this.sbAnimate.next('closed');
     }
   }

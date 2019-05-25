@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 import { Property } from '../../models/properties.model';
 import { Animations } from '../../animate';
@@ -9,9 +10,6 @@ import { AnimateService } from '../../animate.service';
   selector: 'app-properties',
   templateUrl: './properties.component.html',
   styleUrls: ['./properties.component.scss'],
-  animations: [
-    Animations.toggleModal
-  ]
 })
 export class PropertiesComponent implements OnInit {
 
@@ -19,14 +17,12 @@ export class PropertiesComponent implements OnInit {
   content = 'general';
   property: Property;
   private modalAnimateSub: Subscription;
-  modalOpen = false;
 
   constructor(
     public animateService: AnimateService
     ) { }
 
   ngOnInit() {
-    this.modalSubscribe();
 
     this.property = {
       general: {
@@ -48,23 +44,29 @@ export class PropertiesComponent implements OnInit {
           schoolDistrict: '',
           description: ''
         }
+      },
+      financial: {
+        purchase: null,
+        estimatedARV: null,
+        downpayment: null,
+        closingCost: null,
+        rehabCost: null,
+        miscellaneousCost: null,
+        loanRate: null,
+        loanTerm: null,
+        loanAmount: null,
+        loanPayments: null,
+        mortgageRate: null,
+        mortgageTerm: null,
+        mortgageAmount: null,
+        mortgagePayment: null,
+        currentBalance: null
       }
-    }
+    };
+    console.log(this.property);
   }
 
-  // setValue() {
-  //   this.street = '2846';
-  // }
-
-  modalSubscribe() {
-    this.modalAnimateSub = this.animateService.modalAnimateListener()
-    .subscribe((res: boolean) => {
-      this.modalOpen = res;
-    });
-  }
-
-  modalToggle(res: boolean) {
-    console.log(`Modal Open: ${res}`);
+  modalToggle(res: string) {
     this.animateService.modalAnimateUpdate(res);
   }
 

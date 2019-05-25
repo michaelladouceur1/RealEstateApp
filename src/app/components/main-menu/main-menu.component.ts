@@ -33,7 +33,6 @@ export class MainMenuComponent implements OnInit {
   }
 
   sbReturn() {
-    console.log(this.res);
     return this.res;
   }
 }

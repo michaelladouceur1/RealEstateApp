@@ -24,23 +24,23 @@ export interface Property {
     }
   };
 
-  // financial: {
-  //   purchase: number;
-  //   estimatedARV: number;
-  //   downpayment: number;
-  //   closingCost: number;
-  //   rehabCost: number;
-  //   miscellaneousCost: number;
-  //   loanRate: number;
-  //   loanTerm: number;
-  //   loanAmount: number;
-  //   loanPayments: number;
-  //   mortgageRate: number;
-  //   mortgageTerm: number;
-  //   mortgageAmount: number;
-  //   mortgagePayment: number;
-  //   currentBalance: number;
-  // };
+  financial: {
+    purchase: number;
+    estimatedARV: number;
+    downpayment: number;
+    closingCost: number;
+    rehabCost: number;
+    miscellaneousCost: number;
+    loanRate: number;
+    loanTerm: number;
+    loanAmount: number;
+    loanPayments: number;
+    mortgageRate: number;
+    mortgageTerm: number;
+    mortgageAmount: number;
+    mortgagePayment: number;
+    currentBalance: number;
+  };
 
   // rehab: {
   //   features: [
