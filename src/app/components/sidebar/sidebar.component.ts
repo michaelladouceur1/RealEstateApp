@@ -21,11 +21,13 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.sbAnimateSub = this.animateService.sbAnimateListener()
       .subscribe((res: string) => {
+        console.log('Subscribed to Sidebar');
         this.res = res;
       });
   }
 
   sidebarReturn() {
+    console.log('Sidebar Clicked');
     return this.res;
   }
 

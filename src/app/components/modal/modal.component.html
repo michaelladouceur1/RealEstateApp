@@ -1,8 +1,9 @@
-<div class="modal">
+<div [@toggleModal]="modalOpen ? 'open' : 'close'" class="modal">
   <div class="modal-header">
     {{ header }}
   </div>
   <div class="modal-content">
     <ng-content></ng-content>
   </div>
+  <button id="modal-button" (click)="modalToggle(false)">Close</button>
 </div>

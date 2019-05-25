@@ -13,7 +13,7 @@
         <form #propertyForm="ngForm">
           <div class="general" *ngIf="content=='general'">
 
-
+              <!-- {{ propertyForm | json }} -->
 
             <!-- ADDRESS INFO -->
             <div class="prop-address">
@@ -171,8 +171,10 @@
                     </select>
                   </div>
                   <div class="form-item button">
-                    <button name="description">Add Description</button>
-                    <app-modal name="description" header="Description"></app-modal>
+                    <button (click)="modalToggle(true)" name="description">Add Description</button>
+                    <app-modal header="Description">
+                      <textarea name="description" id="description" cols="30" rows="10" [(ngModel)]="property.general.features.description"></textarea>
+                    </app-modal>
                   </div>
                 </li>
               </ul>

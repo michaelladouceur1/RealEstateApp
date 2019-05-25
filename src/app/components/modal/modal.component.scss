@@ -1,10 +1,19 @@
 @import '../../app.component.scss';
 
 .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
   background: gray;
   transition: $card-transition;
   padding: 10px;
-  height: 0px;
   width: 0px;
-  visibility: collapse;
+  max-width: 800px;
+  opacity: 0;
+  #modal-button {
+    height: 30px;
+    width: 75px;
+  }
 }

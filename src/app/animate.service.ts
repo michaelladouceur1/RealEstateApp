@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimateService {
+  private modalAnimate = new Subject<boolean>();
   private sbAnimate = new Subject<string>();
   private openLeft: boolean = false;
   private openRight: boolean = false;
@@ -12,11 +13,15 @@ export class AnimateService {
   constructor() { }
 
   modalAnimateListener() {
-
+    return this.modalAnimate.asObservable();
   }
 
   sbAnimateListener() {
     return this.sbAnimate.asObservable();
+  }
+
+  modalAnimateUpdate(res: boolean) {
+    this.modalAnimate.next(res);
   }
 
   sbAnimateUpdate(res: string) {

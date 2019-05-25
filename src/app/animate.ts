@@ -103,5 +103,35 @@ export const Animations = {
     transition('* <=> *', [
       animate(transitionTime)
     ])
+  ]),
+  toggleModal: trigger('toggleModal', [
+    state('open', style({
+      width: '60%',
+      opacity: 1
+    })),
+    state('closed', style({
+      width: 0,
+      opacity: 0
+    })),
+    transition('open => closed', [
+      animate(transitionTime)
+    ]),
+    transition('closed => open', [
+      animate(transitionTime)
+    ])
+  ]),
+  darkenPusher: trigger('darkenPusher', [
+    state('light', style({
+      opacity: 1
+    })),
+    state('dark', style({
+      opacity: 0.5
+    })),
+    transition('light => dark', [
+      animate(transitionTime)
+    ]),
+    transition('dark => light', [
+      animate(transitionTime)
+    ])
   ])
-}
+};

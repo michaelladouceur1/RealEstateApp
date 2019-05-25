@@ -8,17 +8,32 @@ import { AnimateService } from 'src/app/animate.service';
   templateUrl: './pusher.component.html',
   styleUrls: ['./pusher.component.scss'],
   animations: [
-    Animations.openCloseContent
+    Animations.openCloseContent,
+    Animations.darkenPusher
   ]
 })
 export class PusherComponent implements OnInit {
 
+  private modalAnimateSub: Subscription;
   private sbAnimateSub: Subscription;
+  modalOpen = false;
   res: string;
 
   constructor(public animateService: AnimateService) { }
 
   ngOnInit() {
+    this.modalSubscribe();
+    this.sidebarSubscribe();
+  }
+
+  modalSubscribe() {
+    this.modalAnimateSub = this.animateService.modalAnimateListener()
+    .subscribe((res: boolean) => {
+      this.modalOpen = res;
+    });
+  }
+
+  sidebarSubscribe() {
     this.sbAnimateSub = this.animateService.sbAnimateListener()
       .subscribe((res: string) => {
         this.res = res;
