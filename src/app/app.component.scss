@@ -42,26 +42,39 @@ i {
   font-family: 'Material Icons' !important;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 .form-block {
   list-style: none;
   width: 100%;
   margin: 0;
   padding: 10px;
   border: 1px solid $background-color;
-  li, label, input, select {
+  li, label, input, select, textarea {
     width: 100%;
+  }
+  button {
+    width: 200px;
   }
   li {
     margin: 10px auto;
     text-align: left;
+    .button {
+      text-align: center;
+    }
   }
-  input, select {
+  input, select, textarea, button {
     border: 1px solid $background-color;
     border-radius: 2px;
     outline: none;
     &:focus {
       border: 1px solid $line-hover-color;
     }
+  }
+  textarea {
+    resize: none;
   }
   .form-header {
     font-size: 0.9*$header-font-size;
@@ -76,6 +89,24 @@ i {
     }
   }
   .form-item {
+    position: relative;
     font-size: 0.7*$header-font-size;
+    width: 100%;
+  }
+  .form-span {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    .form-item {
+      margin: 0 10px 0 10px;
+      &:first-child {
+        margin: 0;
+        margin-right: 10px;
+      }
+      &:last-child {
+        margin: 0;
+        margin-left: 10px;
+      }
+    }
   }
 }

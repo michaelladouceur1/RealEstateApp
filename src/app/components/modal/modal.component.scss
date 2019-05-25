@@ -1,0 +1,10 @@
+@import '../../app.component.scss';
+
+.modal {
+  background: gray;
+  transition: $card-transition;
+  padding: 10px;
+  height: 0px;
+  width: 0px;
+  visibility: collapse;
+}

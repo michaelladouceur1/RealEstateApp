@@ -11,6 +11,10 @@ export class AnimateService {
 
   constructor() { }
 
+  modalAnimateListener() {
+
+  }
+
   sbAnimateListener() {
     return this.sbAnimate.asObservable();
   }

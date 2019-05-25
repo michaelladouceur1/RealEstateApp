@@ -1,22 +1,37 @@
 @import '../../app.component.scss';
 @import '../pusher/pusher.component.scss';
 
+@supports (display: grid) {
+  .content {
+    display: grid;
+    grid-gap: $grid-gap;
+    @media screen and (min-width: 800px) {
+      grid-template-columns: 7fr 3fr;
+      grid-template-rows: 3fr 1fr;
+      grid-template-areas:
+        'general prof'
+        'general prof';
+    }
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr 1fr;
+      grid-template-areas:
+        'prof'
+        'general';
+    }
+  }
+}
+
 .content {
-  display: grid;
-  grid-gap: $grid-gap;
-  grid-template-columns: 7fr 3fr;
-  grid-template-rows: 2fr 1fr;
-  grid-template-areas:
-    'general prof'
-    'general .';
   .prop-general-info {
     grid-area: general;
     .new-prop-nav {
       display: flex;
-      align-items: stretch;
+      align-items: center;
       justify-content: space-around;
       width: 100%;
-      margin: 0;
+      max-width: 750px;
+      margin: 0 auto;
       margin-bottom: 10px;
       padding: 10px;
       li {
@@ -46,16 +61,24 @@
       grid-gap: 1em;
       grid-template-areas:
         'address info'
-        'address info';
+        'feature-ext feature-ext';
       .prop-address {
         grid-area: address;
       }
-      .prop-info {
+      .prop-features {
         grid-area: info;
+      }
+      .prop-features-ext {
+        grid-area: feature-ext;
       }
     }
   }
   .prop-profile {
     grid-area: prof;
+    img {
+      width: 90%;
+      max-width: 300px;
+      border: 2px solid $background-color;
+    }
   }
 }
