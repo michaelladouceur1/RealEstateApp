@@ -22,7 +22,7 @@
     "@angular/router": "~7.2.0",
     "angular-web-storage": "^7.0.0-beta.1",
     "core-js": "^2.5.4",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "mongoose": "^5.5.1",
